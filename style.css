@@ -1,0 +1,43 @@
+body {
+    background-color: lightblue;
+    
+
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    color: darkblue;
+    font-size: 56px;
+}
+
+#world {
+    position: relative;
+}
+
+p {
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+
+.worldCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: darkblue;
+    align-items: center;
+    padding: 30px;
+    width: 450px;
+    height: 700px;
+    margin: 40px;
+}
+
+.cardHolder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

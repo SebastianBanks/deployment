@@ -21,6 +21,15 @@ p {
     font-size: 20px;
 }
 
+.btn {
+    background-color: maroon;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 10px;
+    font-size: large;
+}
+
 .worldCard {
     position: relative;
     display: flex;
@@ -32,6 +41,7 @@ p {
     width: 450px;
     height: 700px;
     margin: 40px;
+    border-radius: 5px;
 }
 
 .cardHolder {

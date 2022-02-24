@@ -33,8 +33,11 @@ async function wildShow(arry) {
         
         let colors2 = arry
         let randomNum = Math.floor(Math.random() * 148)
+        let randomNum2 = Math.floor(Math.random() * 148)
         let randomColor = colors2[randomNum]
+        let randomColor2 = colors2[randomNum2]
         await load()
+        body.style.backgroundColor = randomColor2
         card.style.backgroundColor = randomColor
         console.log(randomColor)
         min++

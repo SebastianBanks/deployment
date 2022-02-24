@@ -175,7 +175,7 @@ app.get("/api/colors", (req, res) => {
     try {
         res.status(200).send(colors)
     } catch {
-        rollbar.warning("Failed to get colors")
+        rollbar.error("Failed to get colors")
     }
 })
 
@@ -187,7 +187,7 @@ app.post("/api/color", (req, res) => {
         colors.push(color)
         res.status(200).send(colors)
     } else {
-        rollbar.critical(`${color} is not a real color`)
+        rollbar.error(`${color} is not a real color`)
         res.send(400).send(`${color} is not a real color`)
     }
 

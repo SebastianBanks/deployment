@@ -5,9 +5,9 @@ const input = document.querySelector("input")
 
 let colors = []
 const changeColor = () => {
-    let colors = ["maroon", "blue", "black", "purple", "darkcyan", "darkgreen", "darkred"]
+    let colors3 = ["maroon", "blue", "black", "purple", "darkcyan", "darkgreen", "darkred"]
     let randomNum = Math.floor(Math.random() * 7)
-    let randomColor = colors[randomNum]
+    let randomColor = colors3[randomNum]
     card.style.backgroundColor = randomColor
 
     console.log(randomColor)
@@ -16,7 +16,7 @@ const changeColor = () => {
 
 
 function wildShow() {
-    let max = 2000
+    let max = 10
     let min = 0
 
     while (min < max) {
@@ -25,6 +25,7 @@ function wildShow() {
         let randomNum = Math.floor(Math.random() * 7)
         let randomColor = colors2[randomNum]
         card.style.backgroundColor = randomColor
+        console.log(randomColor)
         min++
     }
 }
@@ -34,7 +35,7 @@ const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
            colors = res.data
-           console.log(colors)
+           
         })
         .catch(err => console.log(err))
 }
@@ -60,7 +61,7 @@ const makeColor = (e) => {
 }
 
 getColors()
-console.log(colors)
+
 wildShow()
 
 btn.addEventListener("click", changeColor)

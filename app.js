@@ -61,6 +61,7 @@ const makeColor = (e) => {
 
 getColors()
 console.log(colors)
+wildShow()
 
 btn.addEventListener("click", changeColor)
 form.addEventListener("submit", makeColor)

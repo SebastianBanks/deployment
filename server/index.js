@@ -173,7 +173,7 @@ let colors = []
 
 app.get("/api/colors", (req, res) => {
     try {
-        res.status(200).send(colors)
+        res.status(200).send(cssColors)
     } catch {
         rollbar.error("Failed to get colors")
     }

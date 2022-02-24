@@ -3,7 +3,7 @@ const btn = document.querySelector(".btn")
 const form = document.querySelector("form")
 const input = document.querySelector("input")
 
-
+let colors
 const changeColor = () => {
     let colors = ["maroon", "blue", "black", "purple", "darkcyan", "darkgreen", "darkred"]
     let randomNum = Math.floor(Math.random() * 7)
@@ -32,8 +32,7 @@ function wildShow() {
 const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
-            input.value = ""
-            console.log(res)
+           colors = res.data
         })
         .catch(err => console.log(err))
 }

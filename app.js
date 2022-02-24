@@ -25,7 +25,7 @@ async function load () { // We need to wrap the loop into an async function for 
 
 
 
-function wildShow(arry) {
+async function wildShow(arry) {
     let max = 100
     let min = 0
 
@@ -34,7 +34,7 @@ function wildShow(arry) {
         let colors2 = arry
         let randomNum = Math.floor(Math.random() * 148)
         let randomColor = colors2[randomNum]
-        load()
+        await load()
         card.style.backgroundColor = randomColor
         console.log(randomColor)
         min++
@@ -42,7 +42,7 @@ function wildShow(arry) {
 }
 
 
-const getColors = () => {
+const getColors = async () => {
     axios.get("/api/colors")
         .then(res => {
             console.log("---------func-----------")
@@ -50,7 +50,7 @@ const getColors = () => {
            console.log(colors.length)
            console.log(colors)
            console.log(colors[0])
-           wildShow(colors)
+           await wildShow(colors)
            console.log("---------func-----------")
         })
         .catch(err => console.log(err))

@@ -20,9 +20,10 @@ function wildShow() {
     let min = 0
 
     while (min < max) {
-        let colors = getColors()
+        getColors()
+        let colors2 = colors
         let randomNum = Math.floor(Math.random() * 7)
-        let randomColor = colors[randomNum]
+        let randomColor = colors2[randomNum]
         card.style.backgroundColor = randomColor
         min++
     }
@@ -58,6 +59,7 @@ const makeColor = (e) => {
 }
 
 getColors()
+wildShow()
 
 btn.addEventListener("click", changeColor)
 form.addEventListener("submit", makeColor)

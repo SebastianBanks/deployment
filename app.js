@@ -3,7 +3,7 @@ const btn = document.querySelector(".btn")
 const form = document.querySelector("form")
 const input = document.querySelector("input")
 
-let colors
+let colors = []
 const changeColor = () => {
     let colors = ["maroon", "blue", "black", "purple", "darkcyan", "darkgreen", "darkred"]
     let randomNum = Math.floor(Math.random() * 7)
@@ -59,7 +59,7 @@ const makeColor = (e) => {
 }
 
 getColors()
-wildShow()
+
 
 btn.addEventListener("click", changeColor)
 form.addEventListener("submit", makeColor)

@@ -42,7 +42,7 @@ async function wildShow(arry) {
 }
 
 
-const getColors = async () => {
+const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
             console.log("---------func-----------")
@@ -50,7 +50,7 @@ const getColors = async () => {
            console.log(colors.length)
            console.log(colors)
            console.log(colors[0])
-           await wildShow(colors)
+           wildShow(colors)
            console.log("---------func-----------")
         })
         .catch(err => console.log(err))

@@ -13,6 +13,14 @@ const changeColor = () => {
     console.log(randomColor)
 }
 
+const getColors = () => {
+    axios.get("/api/colors")
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => console.log(err))
+}
+
 const makeColor = (e) => {
     e.preventDefault()
     axios.post("/api/color", {color: input.value})

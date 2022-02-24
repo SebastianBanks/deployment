@@ -34,9 +34,12 @@ function wildShow() {
 const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
+            console.log("---------func-----------")
            colors = res.data
            console.log(colors)
            console.log(colors[0])
+           return res.data
+           console.log("---------func-----------")
         })
         .catch(err => console.log(err))
 }
@@ -62,8 +65,11 @@ const makeColor = (e) => {
 }
 
 getColors()
-console.log(colors)
-wildShow()
-
+console.log(colors[5])
+// wildShow()
+console.log("-------------")
+let att = getColors()
+console.log(att)
+console.log("---------------")
 btn.addEventListener("click", changeColor)
 form.addEventListener("submit", makeColor)

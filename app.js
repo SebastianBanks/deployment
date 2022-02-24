@@ -13,6 +13,16 @@ const changeColor = () => {
     console.log(randomColor)
 }
 
+// Returns a Promise that resolves after "ms" Milliseconds
+const timer = ms => new Promise(res => setTimeout(res, ms))
+
+async function load () { // We need to wrap the loop into an async function for this to work
+  for (var i = 0; i < 3; i++) {
+    console.log(i);
+    await timer(3000); // then the created Promise can be awaited
+  }
+}
+
 
 
 function wildShow(arry) {
@@ -24,6 +34,7 @@ function wildShow(arry) {
         let colors2 = arry
         let randomNum = Math.floor(Math.random() * 148)
         let randomColor = colors2[randomNum]
+        load()
         card.style.backgroundColor = randomColor
         console.log(randomColor)
         min++

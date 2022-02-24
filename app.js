@@ -35,7 +35,8 @@ const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
            colors = res.data
-           
+           console.log(colors)
+           console.log(colors[0])
         })
         .catch(err => console.log(err))
 }
@@ -61,7 +62,7 @@ const makeColor = (e) => {
 }
 
 getColors()
-
+console.log(colors)
 wildShow()
 
 btn.addEventListener("click", changeColor)

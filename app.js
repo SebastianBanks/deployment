@@ -15,13 +15,13 @@ const changeColor = () => {
 
 
 
-function wildShow() {
+function wildShow(arry) {
     let max = 10
     let min = 0
 
     while (min < max) {
         getColors()
-        let colors2 = colors
+        let colors2 = arry
         let randomNum = Math.floor(Math.random() * 7)
         let randomColor = colors2[randomNum]
         card.style.backgroundColor = randomColor
@@ -36,9 +36,10 @@ const getColors = () => {
         .then(res => {
             console.log("---------func-----------")
            colors = res.data
+           console.log(colors.length)
            console.log(colors)
            console.log(colors[0])
-           return res.data
+           wildShow(colors)
            console.log("---------func-----------")
         })
         .catch(err => console.log(err))

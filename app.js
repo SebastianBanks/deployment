@@ -26,11 +26,12 @@ const makeColor = (e) => {
     e.preventDefault()
     axios.post("/api/color", {color: input.value})
         .then(res => console.log(res))
-        .catch(err => {
+        .catch((err, res) => {
             input.value = ''
 
+            console.log(err)
             const notif = document.createElement('aside')
-            notif.innerHTML = `<p>${err.response.data}</p>
+            notif.innerHTML = `<p>${res}</p>
             <button class='close'>close</button>`
             document.body.appendChild(notif)
 

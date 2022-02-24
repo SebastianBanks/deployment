@@ -19,14 +19,14 @@ const timer = ms => new Promise(res => setTimeout(res, ms))
 async function load () { // We need to wrap the loop into an async function for this to work
   for (var i = 0; i < 3; i++) {
     console.log(i);
-    await timer(500); // then the created Promise can be awaited
+    await timer(50); // then the created Promise can be awaited
   }
 }
 
 
 
 async function wildShow(arry) {
-    let max = 100
+    let max = 1000
     let min = 0
 
     while (min < max) {

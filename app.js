@@ -2,6 +2,7 @@ const card = document.querySelector(".worldCard")
 const btn = document.querySelector(".btn")
 const form = document.querySelector("form")
 const input = document.querySelector("input")
+const body = document.querySelector("body")
 
 let colors = []
 const changeColor = () => {

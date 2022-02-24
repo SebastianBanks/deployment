@@ -27,7 +27,7 @@ async function load () { // We need to wrap the loop into an async function for 
 
 
 async function wildShow(arry) {
-    let max = 1000
+    let max = 9000
     let min = 0
 
     while (min < max) {
@@ -80,12 +80,9 @@ const makeColor = (e) => {
         })
 }
 
-getColors()
+
 console.log(colors[5])
 // wildShow()
-console.log("-------------")
-let att = getColors()
-console.log(att)
-console.log("---------------")
-btn.addEventListener("click", changeColor)
+
+btn.addEventListener("click", getColors)
 form.addEventListener("submit", makeColor)

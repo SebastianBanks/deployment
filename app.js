@@ -27,7 +27,7 @@ const makeColor = (e) => {
     axios.post("/api/color", {color: input.value})
         .then(res => console.log(res))
         .catch(err => {
-            nameInput.value = ''
+            input.value = ''
 
             const notif = document.createElement('aside')
             notif.innerHTML = `<p>${err.response.data}</p>

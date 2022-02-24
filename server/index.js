@@ -188,7 +188,7 @@ app.post("/api/color", (req, res) => {
         res.status(200).send(colors)
     } else {
         rollbar.critical(`${color} is not a real color`)
-        res.send(200).send(colors)
+        res.send(400).send(`${color} is not a real color`)
     }
 
     

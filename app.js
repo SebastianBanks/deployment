@@ -13,6 +13,22 @@ const changeColor = () => {
     console.log(randomColor)
 }
 
+
+
+function wildShow() {
+    let max = 2000
+    let min = 0
+
+    while (min < max) {
+        let colors = getColors()
+        let randomNum = Math.floor(Math.random() * 7)
+        let randomColor = colors[randomNum]
+        card.style.backgroundColor = randomColor
+        min++
+    }
+}
+
+
 const getColors = () => {
     axios.get("/api/colors")
         .then(res => {
@@ -26,12 +42,11 @@ const makeColor = (e) => {
     e.preventDefault()
     axios.post("/api/color", {color: input.value})
         .then(res => console.log(res))
-        .catch((err, res) => {
+        .catch(err => {
             input.value = ''
 
-            console.log(err)
             const notif = document.createElement('aside')
-            notif.innerHTML = `<p>${res}</p>
+            notif.innerHTML = `<p>${err.response.data}</p>
             <button class='close'>close</button>`
             document.body.appendChild(notif)
 
@@ -42,6 +57,8 @@ const makeColor = (e) => {
             })
         })
 }
+
+getColors()
 
 btn.addEventListener("click", changeColor)
 form.addEventListener("submit", makeColor)

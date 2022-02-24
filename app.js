@@ -16,13 +16,13 @@ const changeColor = () => {
 
 
 function wildShow(arry) {
-    let max = 10
+    let max = 100
     let min = 0
 
     while (min < max) {
-        getColors()
+        
         let colors2 = arry
-        let randomNum = Math.floor(Math.random() * 7)
+        let randomNum = Math.floor(Math.random() * 148)
         let randomColor = colors2[randomNum]
         card.style.backgroundColor = randomColor
         console.log(randomColor)
